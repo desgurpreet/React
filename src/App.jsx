@@ -1,49 +1,61 @@
 import React, { useState } from "react";
+import Card from "./Components/propsData";
 function App() {
-  const [value, setValue] = useState(100);
-  const [banned, setBanned] = useState({ name: "gurpreet", isBanned: false });
-  const [val, setVal] = useState([1, 2, 3, 4, 5, 6]);
-  //value for value (use inside () of useState)
-  //setValue give function to change the useState value
-  //in react we cannot change value directly
+  const data = [
+    {
+      name: "John",
+      profession: "Painter",
+      image:
+        "https://media.istockphoto.com/id/1562983249/photo/portrait-of-happy-and-successful-businessman-indian-man-smiling-and-looking-at-camera.jpg?s=612x612&w=is&k=20&c=ucGYVfkrOautxqml9O94gwp-tcR4uvMQOBbsbFI-vO0=",
+      friends: false,
+    },
+    {
+      name: "John",
+      profession: "Painter",
+      image:
+        "https://media.istockphoto.com/id/1562983249/photo/portrait-of-happy-and-successful-businessman-indian-man-smiling-and-looking-at-camera.jpg?s=612x612&w=is&k=20&c=ucGYVfkrOautxqml9O94gwp-tcR4uvMQOBbsbFI-vO0=",
+      friends: false,
+    },
+    {
+      name: "John",
+      profession: "Painter",
+      image:
+        "https://media.istockphoto.com/id/1562983249/photo/portrait-of-happy-and-successful-businessman-indian-man-smiling-and-looking-at-camera.jpg?s=612x612&w=is&k=20&c=ucGYVfkrOautxqml9O94gwp-tcR4uvMQOBbsbFI-vO0=",
+      friends: false,
+    },
+    {
+      name: "John",
+      profession: "Painter",
+      image:
+        "https://media.istockphoto.com/id/1562983249/photo/portrait-of-happy-and-successful-businessman-indian-man-smiling-and-looking-at-camera.jpg?s=612x612&w=is&k=20&c=ucGYVfkrOautxqml9O94gwp-tcR4uvMQOBbsbFI-vO0=",
+      friends: false,
+    },
+  ];
+
+  const [realdata, setRealData] = useState(data);
+  const handleFriendsButton = (cardindex) => {
+    setRealData((previous) => {
+      return previous.map((item, index) => {
+        if (index === cardindex) {
+          return { ...item, friends: !item.friends };
+        }
+        return item;
+      });
+    });
+  };
   return (
-    <div className="p-4">
-      <div>
-        <h1>{value}</h1>
-        <button
-          onClick={() => setValue(value == 100 ? 200 : 100)}
-          className="p-2 bg-gray-400 text-white rounded"
-        >
-          Increment
-        </button>
-      </div>
-      <div>
-        <h1>name: {banned.name}</h1>
-        <h1>isBanned: {banned.isBanned.toString()}</h1>
-        <button
-          onClick={() => setBanned({ ...banned, isBanned: !banned.isBanned })}
-          className="p-2 bg-gray-400 text-white rounded"
-        >
-          Change
-        </button>
-      </div>
-      <div>
-        {val.map((item) => (
-          <h1>{item}</h1>
+    <>
+      <div className="w-full h-screen bg-zinc-300 flex gap-4 items-center justify-center">
+        {realdata.map((item, index) => (
+          <Card
+            key={index}
+            index={index}
+            handleClick={handleFriendsButton}
+            value={item}
+          />
         ))}
-        <button
-          onClick={() => 
-            setVal(() => 
-              val.filter((item, index) => 
-                index != val.length - 1
-              ))
-          }
-          className="p-2 bg-gray-400 text-white rounded bg-blue-500"
-        >
-          update
-        </button>
       </div>
-    </div>
+    </>
   );
 }
 export default App;
