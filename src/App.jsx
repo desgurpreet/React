@@ -1,59 +1,57 @@
 import React, { useState } from "react";
-import Card from "./Components/propsData";
+import Navbar from "./Navbar";
+import SongCard from "./SongCard";
 function App() {
   const data = [
     {
-      name: "John",
-      profession: "Painter",
       image:
-        "https://media.istockphoto.com/id/1562983249/photo/portrait-of-happy-and-successful-businessman-indian-man-smiling-and-looking-at-camera.jpg?s=612x612&w=is&k=20&c=ucGYVfkrOautxqml9O94gwp-tcR4uvMQOBbsbFI-vO0=",
-      friends: false,
+        "https://images.unsplash.com/photo-1661181736686-d160e7f22680?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      name: "Nazar",
+      artist: "Anmol",
+      added: false,
     },
     {
-      name: "John",
-      profession: "Painter",
       image:
-        "https://media.istockphoto.com/id/1562983249/photo/portrait-of-happy-and-successful-businessman-indian-man-smiling-and-looking-at-camera.jpg?s=612x612&w=is&k=20&c=ucGYVfkrOautxqml9O94gwp-tcR4uvMQOBbsbFI-vO0=",
-      friends: false,
+        "https://images.unsplash.com/photo-1661181736686-d160e7f22680?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      name: "Nazar",
+      artist: "Anmol",
+      added: false,
     },
     {
-      name: "John",
-      profession: "Painter",
       image:
-        "https://media.istockphoto.com/id/1562983249/photo/portrait-of-happy-and-successful-businessman-indian-man-smiling-and-looking-at-camera.jpg?s=612x612&w=is&k=20&c=ucGYVfkrOautxqml9O94gwp-tcR4uvMQOBbsbFI-vO0=",
-      friends: false,
+        "https://images.unsplash.com/photo-1661181736686-d160e7f22680?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      name: "Nazar",
+      artist: "Anmol",
+      added: false,
     },
     {
-      name: "John",
-      profession: "Painter",
       image:
-        "https://media.istockphoto.com/id/1562983249/photo/portrait-of-happy-and-successful-businessman-indian-man-smiling-and-looking-at-camera.jpg?s=612x612&w=is&k=20&c=ucGYVfkrOautxqml9O94gwp-tcR4uvMQOBbsbFI-vO0=",
-      friends: false,
+        "https://images.unsplash.com/photo-1661181736686-d160e7f22680?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      name: "Nazar",
+      artist: "Anmol",
+      added: true,
     },
   ];
-
-  const [realdata, setRealData] = useState(data);
-  const handleFriendsButton = (cardindex) => {
-    setRealData((previous) => {
-      return previous.map((item, index) => {
-        if (index === cardindex) {
-          return { ...item, friends: !item.friends };
-        }
-        return item;
-      });
-    });
-  };
+  const [songData, setSongData] = useState(data);
+  const handleClick=((index)=>{
+ setSongData((prev)=>{
+  return prev.map((item,itemindex)=>{
+    if(itemindex===index){
+      return {...item, added:!item.added}
+    }
+    return item;  // Return unchanged items for other indices.
+  })
+ })
+  })
   return (
     <>
-      <div className="w-full h-screen bg-zinc-300 flex gap-4 items-center justify-center">
-        {realdata.map((item, index) => (
-          <Card
-            key={index}
-            index={index}
-            handleClick={handleFriendsButton}
-            value={item}
-          />
-        ))}
+      <div className="w-full h-screen bg-zinc-300">
+        <Navbar data={songData}/>
+        <div className="px-20 flex gap-10 mt-10 flex-wrap">
+          {songData.map((song, index) => (
+            <SongCard key={index} song={song} handleClick={handleClick} index={index}/>
+          ))}
+        </div>
       </div>
     </>
   );
