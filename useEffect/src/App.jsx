@@ -15,9 +15,10 @@ function App() {
     setName("");
     refEl.current.focus();
   }
-  // function handleInput() {
-  //   refEl.current.style.color = "blue";
-  // }
+  function handleInput() {
+    refEl.current.style.color = "blue";
+    refEl.current.value="Jainyy";
+  }
   return (
     <>
       <h1 className="font-semibold">Update count {count}</h1>
@@ -39,6 +40,12 @@ function App() {
           className="bg-blue-400 px-2 py-1 rounded-full mt-2"
         >
           Reset
+        </button>
+        <button
+          onClick={handleInput}
+          className="bg-blue-400 px-2 py-1 rounded-full mt-2"
+        >
+          handle-input
         </button>
       </div>
     </>
