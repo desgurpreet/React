@@ -1,9 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
 import { data, data1 } from "./App";
 function ChildB() {
+  const name = useContext(data);
+  const gender = useContext(data1);
   return (
     <>
-      <data.Consumer>
+      {/* THIS IS FOR USE CONTEXT */}
+      <h1>
+        Hi my name is {name} and my gender is {gender}
+      </h1>
+      {/*THIS IS FOR USING CREATECONTEXT <data.Consumer>
         {(name) => {
           return (
             <data1.Consumer>
@@ -13,7 +19,7 @@ function ChildB() {
             </data1.Consumer>
           );
         }}
-      </data.Consumer>
+      </data.Consumer> */}
     </>
   );
 }
