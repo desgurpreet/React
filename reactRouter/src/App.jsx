@@ -12,8 +12,12 @@ function App() {
   // and element={<Home/>} localhost per home ko call lyi
   //like localhost:3000/home
   const navigate = useNavigate();
-  const navigateToAbout = () => {
-    navigate("/about");
+  //navigation inside event handle
+  // const navigateToAbout = () => {
+  //   navigate("/about");
+  // };
+  const navigateTo = (url) => {
+    navigate(url);
   };
   return (
     <>
@@ -25,7 +29,10 @@ function App() {
       </Routes>
       {/* <button onClick={() => navigate("/about")}>About</button> */}
       {/* <button onClick={() => navigate("/contact")}>Contact</button> */}
-      <button onClick={() => navigateToAbout()}>About</button>
+      {/* navigation using event handle
+      <button onClick={() => navigateToAbout()}>About</button> */}
+      <button onClick={() => navigateTo("/about")}>About</button>
+      <button onClick={() => navigateTo("/contact")}>contact</button>
     </>
   );
 }
