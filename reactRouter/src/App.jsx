@@ -12,6 +12,9 @@ function App() {
   // and element={<Home/>} localhost per home ko call lyi
   //like localhost:3000/home
   const navigate = useNavigate();
+  const navigateToAbout = () => {
+    navigate("/about");
+  };
   return (
     <>
       <Navbar />
@@ -20,8 +23,9 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
-      <button onClick={() => navigate("/about")}>About</button>
-      <button onClick={() => navigate("/contact")}>Contact</button>
+      {/* <button onClick={() => navigate("/about")}>About</button> */}
+      {/* <button onClick={() => navigate("/contact")}>Contact</button> */}
+      <button onClick={() => navigateToAbout()}>About</button>
     </>
   );
 }
