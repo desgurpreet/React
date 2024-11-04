@@ -7,11 +7,13 @@ import MultiInput from "./multiInput.jsx";
 import MultiCheckbox from "./multiCheckbox.jsx";
 import HookuseRef from "./HookuseRef.jsx";
 import HookuseRef2 from "./HookuseRef2.jsx";
+import ArrayInDropdown from "./Components/array-in-dropdown.jsx";
 
 createRoot(document.getElementById("root")).render(
   // <StrictMode>
   <>
-    <HookuseRef2></HookuseRef2>
+    <ArrayInDropdown />
+    {/* <HookuseRef2></HookuseRef2> */}
   </>
   //{/* <App1 /> */}
   // {/* <FormControlFunc/> */}
