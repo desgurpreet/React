@@ -7,6 +7,9 @@ import Home from "./components/Home";
 import About from "./components/About";
 import Contact from "./components/Contact";
 import Navbar from "./components/Navbar";
+import Products from "./components/Products";
+import Shirts from "./components/Shirts";
+import Jeans from "./components/Jeans";
 function App() {
   //in Route path='/' represent localhost:3000 but in vite localhost:5173 hota hai
   // and element={<Home/>} localhost per home ko call lyi
@@ -24,15 +27,19 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/products" element={<Products />}>
+          <Route path="shirts" element={<Shirts />} />
+          <Route path="jeans" element={<Jeans />} />
+        </Route>
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
       {/* <button onClick={() => navigate("/about")}>About</button> */}
       {/* <button onClick={() => navigate("/contact")}>Contact</button> */}
       {/* navigation using event handle
-      <button onClick={() => navigateToAbout()}>About</button> */}
+      <button onClick={() => navigateToAbout()}>About</button> 
       <button onClick={() => navigateTo("/about")}>About</button>
-      <button onClick={() => navigateTo("/contact")}>contact</button>
+      <button onClick={() => navigateTo("/contact")}>contact</button>*/}
     </>
   );
 }

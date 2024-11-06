@@ -1,6 +1,7 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import App1 from "./App1.jsx";
+import App from "./App.jsx";
 import "./index.css";
 import FormControlFunc from "./FormControlFunc.jsx";
 import MultiInput from "./multiInput.jsx";
@@ -12,14 +13,14 @@ import ArrayInDropdown from "./Components/array-in-dropdown.jsx";
 createRoot(document.getElementById("root")).render(
   // <StrictMode>
   <>
-    <ArrayInDropdown />
+    {/* <ArrayInDropdown /> */}
     {/* <HookuseRef2></HookuseRef2> */}
+    <App/>
   </>
   //{/* <App1 /> */}
   // {/* <FormControlFunc/> */}
   // {/* <MultiInput/> */}
   // {/* <MultiCheckbox/> */}
   // {/* <HookuseRef/> */}
-  // {/* <App/> */}
   // </StrictMode>
 );
