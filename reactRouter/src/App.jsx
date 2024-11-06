@@ -12,6 +12,7 @@ import Shirts from "./components/Shirts";
 import Jeans from "./components/Jeans";
 import Users from "./components/Users";
 import UserDetails from "./components/UserDetails";
+import UseSeachParam from "./components/UseSeachParam";
 function App() {
   //in Route path='/' represent localhost:3000 but in vite localhost:5173 hota hai
   // and element={<Home/>} localhost per home ko call lyi
@@ -36,6 +37,7 @@ function App() {
         </Route>
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/search" element={<UseSeachParam/>} />
         <Route path="/users" element={<Users />} />
 
         {/* <Route path="/users/1" element={<UserDetails />} />

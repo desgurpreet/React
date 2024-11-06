@@ -35,6 +35,11 @@ a:hover {
   padding: 20px;
 }
 
+input{
+  border: 2px solid black;
+  border-radius: 5px;
+}
+
 body {
   margin: 0;
   display: flex;
@@ -50,7 +55,7 @@ h1 {
 
 button {
   border-radius: 8px;
-  border: 1px solid transparent;
+  border: 1px solid blue;
   padding: 0.6em 1.2em;
   font-size: 1em;
   font-weight: 500;
