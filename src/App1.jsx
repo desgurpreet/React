@@ -1,6 +1,7 @@
 // STATIC DECLARE import LazyComp1 from "./LazyComp1.jsx";
 // import LazyComp2 from "./LazyComp2.jsx";
 import React, { Suspense, lazy } from "react";
+import FormValidation from "./FormValidation.jsx";
 //DYNAMIC DECLARE
 const LazyComp1=lazy(()=>import('./LazyComp1.jsx'))
 const LazyComp2=lazy(()=>import('./LazyComp2.jsx'))
@@ -8,10 +9,11 @@ const LazyComp2=lazy(()=>import('./LazyComp2.jsx'))
 const App1 = () => {
   return (
   <div>
-    <LazyComp1 />
+    <FormValidation/>
+  {/* <LazyComp1 />
     <Suspense fallback={<div>Loading.....</div>}>
     <LazyComp2 />
-    </Suspense>
+    </Suspense> */}
   </div>
   )
 };
