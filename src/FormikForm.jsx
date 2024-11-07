@@ -6,6 +6,9 @@ const FormikForm = () => {
   const formInitialValues = {
     name: "",
     email: "",
+    age: "",
+    password: "",
+    cpass: "",
   };
   //useFormik hook return a object using this obj
   //we can use (the complexities that is hold inside)
@@ -15,10 +18,14 @@ const FormikForm = () => {
     useFormik({
       initialValues: formInitialValues,
       validationSchema: FormSchema,
-      onSubmit: (values) => {
+      onSubmit: (values, action) => {
         console.log(values);
         console.log(values.name);
         console.log(values.email);
+        console.log(values.age);
+        console.log(values.password);
+        console.log(values.cpass);
+        action.resetForm();
       },
     });
   return (
@@ -47,11 +54,54 @@ const FormikForm = () => {
           name="email"
           onBlur={handleBlur}
           onChange={handleChange}
+          value={values.email}
         />
         <br />
         {/* <span style={{ color: "red" }}>{errors.email}</span> */}
         {errors.email && touched.email ? (
           <span style={{ color: "red" }}>{errors.email}</span>
+        ) : null}
+        <br />
+        <br />
+        <label htmlFor="">Enter Age: </label>
+        <input
+          type="text"
+          name="age"
+          onBlur={handleBlur}
+          onChange={handleChange}
+          value={values.age}
+        />
+        <br />
+        {errors.age && touched.age ? (
+          <span style={{ color: "red" }}>{errors.age}</span>
+        ) : null}
+        <br />
+        <br />
+        <label htmlFor="">Enter Password: </label>
+        <input
+          type="text"
+          name="password"
+          onBlur={handleBlur}
+          onChange={handleChange}
+          value={values.password}
+        />
+        <br />
+        {errors.password && touched.password ? (
+          <span style={{ color: "red" }}>{errors.password}</span>
+        ) : null}
+        <br />
+        <br />
+        <label htmlFor="">Enter Confirm Password: </label>
+        <input
+          type="text"
+          name="cpass"
+          onBlur={handleBlur}
+          onChange={handleChange}
+          value={values.cpass}
+        />
+        <br />
+        {errors.cpass && touched.cpass ? (
+          <span style={{ color: "red" }}>{errors.cpass}</span>
         ) : null}
         <br />
         <br />
