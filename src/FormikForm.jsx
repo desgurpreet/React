@@ -1,5 +1,6 @@
 import { useFormik } from "formik";
 import React from "react";
+import { FormSchema } from "./FormSchema";
 
 const FormikForm = () => {
   const formInitialValues = {
@@ -10,6 +11,7 @@ const FormikForm = () => {
   //we can use (the complexities that is hold inside)
   const formik = useFormik({
     initialValues: formInitialValues,
+    validationSchema:FormSchema,
     onSubmit: (values) => {
       console.log(values);
       console.log(values.name);
@@ -28,9 +30,13 @@ const FormikForm = () => {
           value={formik.values.name}
         />
         <br />
+        <span style={{color:'red'}}>{formik.errors.name}</span>
+        <br />
         <br />
         <label htmlFor="">Enter Email: </label>
         <input type="text" name="email" onChange={formik.handleChange} />
+        <br />
+        <span style={{color:'red'}}>{formik.errors.email}</span>
         <br />
         <br />
         <input type="submit" value="Submit" />
