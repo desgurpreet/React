@@ -6,13 +6,17 @@ const GridBS = () => {
     <div>
       <Container fluid="lg">
         <Row className="text-center">
-          <Col md={8} sm={6} xs={4}>
+          <Col md={{ offset:2, span: 6 }}>
+          {/* span mean strech col like col md={4}
+          if apply md={{span:6}} col strech on number 6 takk*/}
+          {/* <Col md={{ offset: 4 }}> */}
+          {/*for getting space from left side */}
             <div className="bg-danger p-2">MY DIV</div>
           </Col>
-          <Col md={2} sm={3} xs={4}>
+          <Col>
             <div className="bg-primary p-2">MY DIV</div>
           </Col>
-          <Col md={2} sm={3} xs={4}>
+          <Col>
             <div className="bg-success p-2">MY DIV</div>
           </Col>
         </Row>
