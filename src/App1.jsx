@@ -3,6 +3,7 @@
 import React, { Suspense, lazy } from "react";
 import FormValidation from "./FormValidation.jsx";
 import FormikForm from "./FormikForm.jsx";
+import FormikComponent from "./FormikComponent.jsx";
 //DYNAMIC DECLARE
 const LazyComp1=lazy(()=>import('./LazyComp1.jsx'))
 const LazyComp2=lazy(()=>import('./LazyComp2.jsx'))
@@ -10,7 +11,8 @@ const LazyComp2=lazy(()=>import('./LazyComp2.jsx'))
 const App1 = () => {
   return (
   <div>
-    <FormikForm/>
+    <FormikComponent/>
+    {/* <FormikForm/> */}
     {/* <FormValidation/> */}
   {/* <LazyComp1 />
     <Suspense fallback={<div>Loading.....</div>}>
