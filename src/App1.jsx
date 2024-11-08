@@ -7,25 +7,27 @@ import FormikComponent from "./FormikComponent.jsx";
 import ReactBootstrap from "./ReactBootstrap.jsx";
 import GridBS from "./GridBS.jsx";
 import ImageDemo from "./ImageDemo.jsx";
+import CardBS from "./CardBS.jsx";
 //DYNAMIC DECLARE
-const LazyComp1=lazy(()=>import('./LazyComp1.jsx'))
-const LazyComp2=lazy(()=>import('./LazyComp2.jsx'))
+const LazyComp1 = lazy(() => import("./LazyComp1.jsx"));
+const LazyComp2 = lazy(() => import("./LazyComp2.jsx"));
 
 const App1 = () => {
   return (
-  <div>
-    <ImageDemo/>
-    {/* <GridBS/> */}
-    {/* <ReactBootstrap/> */}
-    {/* <FormikComponent/> */}
-    {/* <FormikForm/> */}
-    {/* <FormValidation/> */}
-  {/* <LazyComp1 />
+    <div>
+      {/* <ImageDemo/> */}
+      <CardBS />
+      {/* <GridBS/> */}
+      {/* <ReactBootstrap/> */}
+      {/* <FormikComponent/> */}
+      {/* <FormikForm/> */}
+      {/* <FormValidation/> */}
+      {/* <LazyComp1 />
     <Suspense fallback={<div>Loading.....</div>}>
     <LazyComp2 />
     </Suspense> */}
-  </div>
-  )
+    </div>
+  );
 };
 
 export default App1;
