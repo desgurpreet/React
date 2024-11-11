@@ -5,3 +5,9 @@
 * {
   font-family: cursive;
 }
+.custom-title {
+  color: white;
+}
+.custom-dropdown .dropdown-toggle::after {
+  color: white;
+}
